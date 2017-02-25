@@ -12,4 +12,9 @@ public class SheepBehavior : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void OnTriggerEnter (Collider other)
+	{
+		Debug.Log ("Boom");
+	}
 }
