@@ -16,11 +16,24 @@ public class MoveCamera : MonoBehaviour {
 		
 	}
 
-	/*void FixedUpdate ()
+	void FixedUpdate ()
 	{
 		while(Input.GetKeyDown("left"))
 		{
+			gameObject.transform.Translate(-speed, 0, 0);
+		}
+		while(Input.GetKeyDown("right"))
+		{
 			gameObject.transform.Translate(speed, 0, 0);
 		}
-	}*/
+		while(Input.GetKeyDown("up"))
+		{
+			gameObject.transform.Translate(0, 0, speed);
+		}
+		while(Input.GetKeyDown("down"))
+		{
+			gameObject.transform.Translate(0, 0, -speed);
+		}
+		
+	}
 }
