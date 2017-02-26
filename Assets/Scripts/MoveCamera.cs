@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveCamera : MonoBehaviour {
+	private Vector3 velocity;
 
 	public float speed;
 
@@ -13,27 +14,38 @@ public class MoveCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKey ("up")) {
+			transform.position += new Vector3 (0, 0, speed);
+		}
+		if (Input.GetKey ("down")) {
+			transform.position -= new Vector3 (0, 0, speed);
+		}
+		if (Input.GetKey ("right")) {
+			transform.position += new Vector3 (speed, 0, 0);
+		}
+		if (Input.GetKey ("left")) {
+			transform.position -= new Vector3 (speed, 0, 0);
+		}
 	}
 
-	void FixedUpdate ()
+	/*void FixedUpdate ()
 	{
-		while(Input.GetKeyDown("left"))
+		if(Input.GetKeyDown("left"))
 		{
 			gameObject.transform.Translate(-speed, 0, 0);
 		}
-		while(Input.GetKeyDown("right"))
+		if(Input.GetKeyDown("right"))
 		{
 			gameObject.transform.Translate(speed, 0, 0);
 		}
-		while(Input.GetKeyDown("up"))
+		if(Input.GetKeyDown("up"))
 		{
 			gameObject.transform.Translate(0, 0, speed);
 		}
-		while(Input.GetKeyDown("down"))
+		if(Input.GetKeyDown("down"))
 		{
 			gameObject.transform.Translate(0, 0, -speed);
 		}
 		
-	}
+	}*/
 }
