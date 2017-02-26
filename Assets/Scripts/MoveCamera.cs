@@ -14,18 +14,19 @@ public class MoveCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey ("up")) {
+		if (Input.GetKey ("up") || Input.GetKey ("w")) {
 			transform.position += new Vector3 (0, 0, speed);
 		}
-		if (Input.GetKey ("down")) {
+		if (Input.GetKey ("down") || Input.GetKey ("s")) {
 			transform.position -= new Vector3 (0, 0, speed);
 		}
-		if (Input.GetKey ("right")) {
+		if (Input.GetKey ("right") || Input.GetKey ("d")) {
 			transform.position += new Vector3 (speed, 0, 0);
 		}
-		if (Input.GetKey ("left")) {
+		if (Input.GetKey ("left") || Input.GetKey ("a")) {
 			transform.position -= new Vector3 (speed, 0, 0);
 		}
+		//transform.Rotate(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0);
 	}
 
 	/*void FixedUpdate ()
